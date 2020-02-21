@@ -1,4 +1,4 @@
-SERVICE ?= <packageName>
+SERVICE ?= campaignmonitor
 REGISTRY ?= pbxx
 COMMIT = $(shell git rev-parse --short HEAD 2>/dev/null)
 LDFLAGS ?=
@@ -48,8 +48,8 @@ vendor: ## starts a docker container with a fresh env to run govendor in
 
 .PHONY: vendor-missing
  vendor-missing: ## updates your project to get all missing dependencies
-	docker run -v $(GOPATH)/src/github.com/promoboxx/<packageName>:/go/src/github.com/promoboxx/<packageName> --name govendor --rm \
-	-w /go/src/github.com/promoboxx/<packageName> --entrypoint='govendor' \
+	docker run -v $(GOPATH)/src/github.com/promoboxx/campaignmonitor:/go/src/github.com/promoboxx/campaignmonitor --name govendor --rm \
+	-w /go/src/github.com/promoboxx/campaignmonitor --entrypoint='govendor' \
 	-it pbxx/govendor fetch +outside
 
 .PHONY: vet
