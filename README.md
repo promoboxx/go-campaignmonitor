@@ -1,25 +1,4 @@
-# go-package-base
-A base template to start new packages from
+# go-campaignmonitor
+This is an opinionated work-in-progress client for the [Campaign Monitor API](https://www.campaignmonitor.com/api/). It uses [promoboxx/go-client](https://github.com/promoboxx/go-client) which uses [opentracing](https://github.com/opentracing/opentracing-go) to provide [RED metrics](https://www.weave.works/blog/the-red-method-key-metrics-for-microservices-architecture/) if a context is provided.
 
-## Getting Started
-
-* Create a new repository using github template
-  * Go to create new repository in github
-  * Choose a repository templace (promoboxx/go-package-base)
-  * Create repository
-* Initialize the new package
-  * Clone the repository to your local machine
-  * Run the init script
-
-```sh
-git clone git@github.com:promoboxx/<my_new_package_name>.git
-cd new-service
-sh init.sh <my_new_package_name>
-
-# govendor init
-# govendor update +external
-# or if you do not have all the dependencies on your local machine
-# govendor fetch +outside
-
-git push -u origin master
-```
+## Usage

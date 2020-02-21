@@ -1,0 +1,97 @@
+{
+	"comment": "",
+	"ignore": "test",
+	"package": [
+		{
+			"checksumSHA1": "s5tdcjh84+tiKS3oSq77mzjB970=",
+			"path": "github.com/google/uuid",
+			"revision": "c2e93f3ae59f2904160ceaab466009f965df46d6",
+			"revisionTime": "2019-04-16T17:24:45Z"
+		},
+		{
+			"checksumSHA1": "PMC9b35zxCEowZ1RbnjR0+43uNY=",
+			"path": "github.com/husobee/vestigo",
+			"revision": "420bd718f4d740fc2d0de74dfb18ce2a5ce5e5af",
+			"revisionTime": "2019-09-24T13:01:02Z"
+		},
+		{
+			"checksumSHA1": "asbFENDIRDuAIZNbYGdax09ioTI=",
+			"path": "github.com/justinas/alice",
+			"revision": "698d694619453f429d388422116af97d11f37f41",
+			"revisionTime": "2019-11-05T13:55:52Z"
+		},
+		{
+			"checksumSHA1": "Aulh7C5SVOA4Jzt5eHNH6197Mbk=",
+			"path": "github.com/konsorten/go-windows-terminal-sequences",
+			"revision": "f55edac94c9bbba5d6182a4be46d86a2c9b5b50e",
+			"revisionTime": "2019-02-26T22:47:05Z"
+		},
+		{
+			"checksumSHA1": "27/3lgVHFu5B0pLypgJcfMoz3e0=",
+			"path": "github.com/opentracing/opentracing-go",
+			"revision": "2876d2018785fe398ec001a16fd15121b8780660",
+			"revisionTime": "2020-01-24T16:56:24Z"
+		},
+		{
+			"checksumSHA1": "4QLjx120cph9sj7VnqOsbhRTCmc=",
+			"path": "github.com/opentracing/opentracing-go/log",
+			"revision": "2876d2018785fe398ec001a16fd15121b8780660",
+			"revisionTime": "2020-01-24T16:56:24Z"
+		},
+		{
+			"checksumSHA1": "1nAYGvzPp3lmlyAHU3My7UdWbgg=",
+			"path": "github.com/pborman/uuid",
+			"revision": "5b6091a6a160ee5ce12917b21ab96acec2a4fdc0",
+			"revisionTime": "2019-10-24T13:36:33Z"
+		},
+		{
+			"checksumSHA1": "PmYPP/YtScCRJ4AnXtrHNmvyECc=",
+			"path": "github.com/promoboxx/go-client/client",
+			"revision": "e4a08d0c3ee72e8c38a05091735ae5e157d08ed8",
+			"revisionTime": "2019-12-18T16:36:18Z"
+		},
+		{
+			"checksumSHA1": "ztzFoEnnsRQCdM/QmIU1JjAjZes=",
+			"path": "github.com/promoboxx/go-glitch/glitch",
+			"revision": "c6a7dead40f7ac7281152b5e5ab70d51aa66e9de",
+			"revisionTime": "2019-11-01T16:23:40Z"
+		},
+		{
+			"checksumSHA1": "EYRfqbpH9nq9mcZR8Wkh3LMPaZw=",
+			"path": "github.com/promoboxx/go-service/alice/middleware",
+			"revision": "2bff3bf3848a7af85e5d1e63fee9bdd0875cc71f",
+			"revisionTime": "2020-02-21T15:01:59Z"
+		},
+		{
+			"checksumSHA1": "5waRowK8chaajMWfuBeFLNkE+o4=",
+			"path": "github.com/promoboxx/go-service/alice/middleware/contextkey",
+			"revision": "2bff3bf3848a7af85e5d1e63fee9bdd0875cc71f",
+			"revisionTime": "2020-02-21T15:01:59Z"
+		},
+		{
+			"checksumSHA1": "vy9tQYmXpL7T7SPh4hSlKnwrukY=",
+			"path": "github.com/promoboxx/go-service/alice/middleware/lrw",
+			"revision": "2bff3bf3848a7af85e5d1e63fee9bdd0875cc71f",
+			"revisionTime": "2020-02-21T15:01:59Z"
+		},
+		{
+			"checksumSHA1": "GSA/avZxeFsUlytQCi3vjD01iZg=",
+			"path": "github.com/promoboxx/go-service/service",
+			"revision": "2bff3bf3848a7af85e5d1e63fee9bdd0875cc71f",
+			"revisionTime": "2020-02-21T15:01:59Z"
+		},
+		{
+			"checksumSHA1": "0qmFlAIqFrOE5bqyJckkgiLuZqE=",
+			"path": "github.com/sirupsen/logrus",
+			"revision": "947831125f318c2fb34bfc6205ee5d74994deb88",
+			"revisionTime": "2020-02-04T22:46:15Z"
+		},
+		{
+			"checksumSHA1": "SPyvK3yHF8WlE6Ddz/XCpAs0Q2E=",
+			"path": "golang.org/x/sys/unix",
+			"revision": "cb0a6d8edb6c3528b01a0be84a5fe513dbf880a6",
+			"revisionTime": "2020-02-18T22:41:24Z"
+		}
+	],
+	"rootPath": "github.com/promoboxx/go-campaignmonitor"
+}
