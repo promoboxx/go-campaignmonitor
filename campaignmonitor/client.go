@@ -2,6 +2,7 @@ package campaignmonitor
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"net/http"
 	"time"
@@ -14,6 +15,9 @@ import (
 const (
 	baseURL     = "https://api.createsend.com/api/v3.2/"
 	serviceName = "campaignmonitor"
+
+	//error codes
+	ErrorJSON = "ERROR_JSON"
 )
 
 // Client is a client that can interact with campaign monitor
@@ -42,11 +46,27 @@ func NewClient(apiKey string, clientID string, timeout time.Duration) Client {
 func (sc *serviceClient) SendSmartEmail(ctx context.Context, smartEmailID string, req SmartEmailRequest) ([]SmartEmailResponse, glitch.DataError) {
 	slug := fmt.Sprintf("transactional/smartEmail/%s/send", smartEmailID)
 
-	reader, err := client.ObjectToJSONReader(&req)
-	if err != nil {
-		return nil, err
+	reader, gErr := client.ObjectToJSONReader(&req)
+	if gErr != nil {
+		return nil, gErr
 	}
 	var res []SmartEmailResponse
-	err = sc.c.Do(ctx, http.MethodPost, slug, nil, nil, reader, &res)
-	return res, err
+	status, resBy, gErr := sc.c.MakeRequest(ctx, http.MethodPost, slug, nil, nil, reader)
+	if gErr != nil {
+		return nil, gErr
+	}
+
+	if status >= 200 && status <= 299 {
+		err := json.Unmarshal(resBy, &res)
+		if err != nil {
+			return nil, glitch.NewDataError(err, ErrorJSON, fmt.Sprintf("could not unmarshal response: %s", resBy))
+		}
+		return res, nil
+	}
+	cmErr := Error{}
+	err := json.Unmarshal(resBy, &cmErr)
+	if err != nil {
+		return nil, glitch.NewDataError(err, ErrorJSON, fmt.Sprintf("could not unmarshal error response: %s", resBy))
+	}
+	return nil, glitch.NewDataError(&cmErr, fmt.Sprintf("%d", cmErr.Code), cmErr.Message)
 }
