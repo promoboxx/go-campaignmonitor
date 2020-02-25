@@ -1,7 +1,5 @@
 package campaignmonitor
 
-import "fmt"
-
 // Attachment contains the base64 encoded content of the attachment as well as the name and content type (e.g. application/pdf)
 type Attachment struct {
 	Content string
@@ -15,6 +13,8 @@ type SmartEmailResponse struct {
 	MessageID string
 	Recipient string
 }
+
+// SmartEmailRequest contains the data necessary to send a "smart" email
 type SmartEmailRequest struct {
 	To                  []string
 	CC                  []string
@@ -23,14 +23,4 @@ type SmartEmailRequest struct {
 	Data                map[string]interface{}
 	AddRecipientsToList bool
 	ConsentToTrack      bool
-}
-
-type Error struct {
-	Code       int32
-	Message    string
-	ResultData interface{}
-}
-
-func (e *Error) Error() string {
-	fmt.Sprintf("CampaignMonitor error. Code: %d, message: %s", e.Code, e.Message)
 }

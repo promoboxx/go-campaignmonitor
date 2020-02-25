@@ -23,6 +23,10 @@ const (
 // Client is a client that can interact with campaign monitor
 type Client interface {
 	SendSmartEmail(ctx context.Context, smartEmailID string, req SmartEmailRequest) ([]SmartEmailResponse, glitch.DataError)
+	CreateCampaignFromTemplate(ctx context.Context, clientID string, createRequest CreateCampaignFromTemplateRequest) (string, glitch.DataError)
+	SendCampaign(ctx context.Context, campaignID string, sendRequest SendCampaignRequest) glitch.DataError
+	CreateSegment(ctx context.Context, listID string, createRequest CreateSegmentRequest) glitch.DataError
+	ImportSubscribers(ctx context.Context, listID string, importRequest ImportSubscribersRequest) (*ImportSubscriberResponse, glitch.DataError)
 }
 
 type serviceClient struct {
