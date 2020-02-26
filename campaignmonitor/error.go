@@ -10,5 +10,5 @@ type Error struct {
 }
 
 func (e *Error) Error() string {
-	fmt.Sprintf("CampaignMonitor error. Code: %d, message: %s", e.Code, e.Message)
+	return fmt.Sprintf("CampaignMonitor error. Code: %d, message: %s", e.Code, e.Message)
 }

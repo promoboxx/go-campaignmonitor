@@ -57,6 +57,21 @@ type CreateCampaignFromTemplateRequest struct {
 // SendCampaignRequest contains the data to send a campaign.
 // SendDate should be null to send immediately - it will be sent as the string "immediately"
 type SendCampaignRequest struct {
-	ConfirmationEmail string
+	ConfirmationEmail *string
 	SendDate          *time.Time
+}
+type sendCampaignRequest struct {
+	ConfirmationEmail *string
+	SendDate          string
+}
+
+func (s SendCampaignRequest) process() sendCampaignRequest {
+	sd := "immediately"
+	if s.SendDate != nil {
+		sd = s.SendDate.Format("2006-01-02 15:04")
+	}
+	return sendCampaignRequest{
+		ConfirmationEmail: s.ConfirmationEmail,
+		SendDate:          sd,
+	}
 }
